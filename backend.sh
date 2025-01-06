@@ -68,7 +68,7 @@ VALIDATE $? "CD APP"
 npm install &>>LOG_FILE_NAME
 VALIDATE $? "Install packages" 
 
-cp home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
+cp /home/ec2-user/expense-shell/backend.service /etc/systemd/system/backend.service
 
 dnf install mysql -y &>>LOG_FILE_NAME
 VALIDATE $? "Installing mysql client"
