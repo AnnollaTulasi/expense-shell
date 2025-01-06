@@ -49,9 +49,6 @@ VALIDATE $? "Downloading the frontend code"
 cd /usr/share/nginx/html &>>LOG_FILE_NAME
 VALIDATE $? "Changing to the html path"
 
-rm -rf /* &>>LOG_FILE_NAME
-VALIDATE $? "Removing existing files before unzip"
-
 unzip /tmp/frontend.zip &>>LOG_FILE_NAME
 VALIDATE $? "Unzipping the dowloaded code"
 
