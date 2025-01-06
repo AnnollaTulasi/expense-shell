@@ -40,10 +40,12 @@ VALIDATE $? "Enabling mysql"
 systemctl start mysqld &>>LOG_FILE_NAME
 VALIDATE $? "Started Mysql"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 -e "show databases"
+mysql_secure_installation --set-root-pass ExpenseApp@1 -e "show databases;" &>>LOG_FILE_NAME
+
 if [ $? -ne 0 ]
 then 
     echo "Password is not set so will be setting should be done"
+    mysql_secure_installation --set-root-pass ExpenseApp@1
     VALIDATE $? "Setting Root Password"
 else
     echo -e "Already password is set hence .... $Y SKIPING"
