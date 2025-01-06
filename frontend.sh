@@ -26,7 +26,7 @@ CHECK_ROOT(){
         exit 1
     fi
 }
-
+mkdir -p $LOGS_FOLDER
 echo -e "$G Execution of the script started $N at : $TIMESTAMP" &>>LOG_FILE_NAME
 
 CHECK_ROOT
