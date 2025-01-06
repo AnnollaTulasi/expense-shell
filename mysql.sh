@@ -11,7 +11,7 @@ TIMESTAMP=$(date +%Y-%m-%d-%H:%M:%S)
 LOG_FILE_NAME="$LOG_FOLDER/$LOG_FILE-$TIMESTAMP"
 
 VALIDATE(){
-    if [$? -ne 0]
+    if [ $? -ne 0 ]
     then
     echo -e "$R $2 is .....FAILURE $N"
     else
@@ -20,7 +20,7 @@ VALIDATE(){
 }
 
 CHECH_ROOT(){
-    if [$USERID -ne 0]
+    if [ $USERID -ne 0 ]
     then
         echo -e "$R Need sudo access for installing packages $N"
         exit 1
