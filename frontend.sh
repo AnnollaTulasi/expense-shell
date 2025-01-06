@@ -52,9 +52,9 @@ VALIDATE $? "Changing to the html path"
 unzip /tmp/frontend.zip &>>LOG_FILE_NAME
 VALIDATE $? "Unzipping the dowloaded code"
 
-cp /home/ec2-user/expense-script/expense.conf /etc/nginx/default.d/expense.conf &>>LOG_FILE_NAME
+cp /home/ec2-user/expense-script/expense.conf /etc/nginx/default.d/expense.conf 
 VALIDATE $? "For redirecting to backent we have to add code"
 
-systemctl restart nginx &>>LOG_FILE_NAME
+systemctl restart nginx 
 VALIDATE $? "Restart Service"
 
